@@ -7,7 +7,7 @@ if (
 ) {
   window.addEventListener("load", function() {
     navigator.serviceWorker
-      .register("app/sw.js")
+      .register("sw.js")
       .then(function(registration) {
         console.log("Service Worker registered");
       })
