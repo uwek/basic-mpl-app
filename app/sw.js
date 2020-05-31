@@ -4,14 +4,14 @@ const staticAssets = [
   "./",
   "./favicon.ico",
   "./vendor/mithril.js",
-  "./vendor/pure-min.css",
-  "./vendor/pouchdb-7.1.1.min.js",
+  //  "./vendor/pure-min.css",
+  "./vendor/pouchdb.min.js",
   "./vendor/lodash.min.js",
   "./images/icons/icon-144x144.png",
-  "./vendor/promise-polyfill.min.js",
-  "./vendor/fetch.umd.js",
+  //  "./vendor/promise-polyfill.min.js",
+  //  "./vendor/fetch.umd.js",
   "./setup_pwa.js",
-  "./main.js"
+  "./app.js"
 ];
 
 self.addEventListener("install", async function() {
