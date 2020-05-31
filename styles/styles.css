@@ -2,8 +2,14 @@
   --menu-width: 200px;
   --text-color: #2b343d;
   /*
-  --header-top: #72D4FF; --header-bot: #5BACFF; --header-border: #97C8FD; --logo-bg: #FABD57; --logo-fg: #fff;
+  --header-top: #72d4ff;
+  --header-bot: #5bacff;
+  --header-border: #97c8fd;
+  --logo-bg: #fabd57;
+  --logo-fg: #fff;
  */
+  /*
+*/
   --header-top: #91b9e8;
   --header-bot: #215693;
   --header-border: #72a5df;
