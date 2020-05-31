@@ -1,0 +1,238 @@
+:root {
+  --menu-width: 200px;
+  --text-color: #2b343d;
+  /*
+  --header-top: #72D4FF; --header-bot: #5BACFF; --header-border: #97C8FD; --logo-bg: #FABD57; --logo-fg: #fff;
+ */
+  --header-top: #91b9e8;
+  --header-bot: #215693;
+  --header-border: #72a5df;
+  --logo-bg: var(--header-bot);
+  --logo-fg: #fff;
+}
+body,
+html {
+  color: var(--text-color);
+  font-family: Helvetica, Arial, Geneva, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.blueheader {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  background-image: linear-gradient(var(--header-top), var(--header-top));
+  border-bottom: 4px solid var(--header-border);
+  text-align: center;
+  vertical-align: middle;
+  line-height: 60px;
+  color: #fff;
+  font-size: 16px;
+  z-index: 10;
+}
+.logo {
+  background-color: var(--logo-bg);
+  color: var(--logo-fg);
+  position: relative;
+  top: -60px;
+  left: 10px;
+  width: 120px;
+  height: 65px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 65px;
+  font-size: 30px;
+  z-index: 13;
+}
+.logo a {
+  text-decoration: none;
+  color: var(--logo-fg);
+}
+.hamburger {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 60px;
+  height: 55px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 65px;
+  z-index: 13;
+}
+/*
+    https://codepen.io/plavookac/pen/qomrMw
+    ==============================================================      
+*/
+#sidebarMenu {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  width: var(--menu-width);
+  margin-top: 74px;
+  transform: translateX(calc(-1 * var(--menu-width)));
+  transition: transform 250ms ease-in-out;
+  background-color: #edf0f4;
+  line-height: 20px;
+  border-right: 5px solid var(--header-border);
+}
+.sidebarMenuInner {
+  margin: 0;
+  padding: 0;
+}
+.sidebarMenuInner li {
+  list-style: none;
+  padding: 5px 5px 5px 35px;
+  cursor: pointer;
+  text-align: left;
+}
+.sidebarMenuInner li:hover {
+  background-color: #d0d8e0;
+}
+.sidebarMenuInner li a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text-color);
+}
+.MenuTop {
+  background-color: var(--header-bot);
+  color: #fff;
+  padding: 15px 0px 15px 35px !important;
+  font-size: 18px;
+  border-bottom: 2px solid #d2d5da;
+  font-weight: bold;
+}
+input#openSidebarMenu[type="checkbox"]:checked ~ #sidebarMenu {
+  transform: translateX(0);
+}
+input#openSidebarMenu[type="checkbox"] {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: none;
+}
+.sidebarIconToggle {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  height: 100%;
+  width: 100%;
+  top: 22px;
+  left: 15px;
+  height: 22px;
+  width: 22px;
+}
+.spinner {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+}
+.horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+.diagonal.part-1 {
+  position: relative;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  float: left;
+}
+.diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+input#openSidebarMenu[type="checkbox"]:checked
+  ~ .sidebarIconToggle
+  > .horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  opacity: 0;
+}
+input#openSidebarMenu[type="checkbox"]:checked
+  ~ .sidebarIconToggle
+  > .diagonal.part-1 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(135deg);
+  margin-top: 8px;
+}
+input#openSidebarMenu[type="checkbox"]:checked
+  ~ .sidebarIconToggle
+  > .diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(-135deg);
+  margin-top: -9px;
+}
+
+main {
+  position: relative;
+  left: 10px;
+  top: 85px;
+  overflow-y: wrap;
+  overflow-x: wrap;
+  /*
+  white-space: nowrap;
+*/
+  color: var(--text-color);
+  z-index: 5;
+  width: calc(100% - 10px);
+}
+
+@media screen and (min-width: 768px) {
+  label.sidebarIconToggle {
+    display: none;
+  }
+  #sidebarMenu {
+    transform: translateX(0);
+  }
+  main {
+    left: var(--menu-width);
+    width: calc(100% - var(--menu-width));
+  }
+}
+/*
+    .mermaid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+    }
+   */
+.fake-textarea {
+  width: 40%;
+  min-height: 200px;
+  border: solid 1px grey;
+  font-size: 22px;
+  padding: 10px;
+}
+
+.cards {
+  left: inherit;
+  width: 100%;
+  /*
+  width: inherit;
+      width: calc(100% - 260px);
+  position: absolute;
+ */
+}
+.card {
+  border: solid 2px #b5c1cf;
+  margin: 10px;
+  padding: 10px;
+  width: 275px;
+  height: 250px;
+  float: left;
+}
